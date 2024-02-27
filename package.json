@@ -1,0 +1,19 @@
+{
+  "homepage": "https://rogelio-lopez.github.io/Path-Finder/",
+  "name": "pfts",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1",
+    "typescript": "^5.0.2",
+    "vite": "^4.5.0"
+  }
+}
