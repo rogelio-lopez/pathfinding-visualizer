@@ -1,26 +1,35 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
-    <link rel="stylesheet" href="./src/style.css">
-  </head>
-  <body id="app">
-    <div class="info-box">
-       <div>
-        <label for="AlgoSelect">Choose a car:</label>
-        <select name="AlgoSelect" id="AlgoSelect">
-          <option disabled selected value> -- select an option -- </option>
-          <option value="BFS">BFS</option>
-        </select>
-      </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite + TS</title>
+  <link rel="stylesheet" href="./src/style.css">
+</head>
+
+<body id="app">
+  <div class="info-box">
+    <div class="top">
+      <select name="AlgoSelect" id="AlgoSelect">
+        <option disabled selected value> -- Search Algorithms -- </option>
+        <option value="BFS">BFS</option>
+      </select>
 
       <button id="StartFinder">Start</button>
       <button id="ClearFinder">Clear</button>
     </div>
-    <main id="Grid" class="grid"></main>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+
+    <div class="instructions">
+      <p>Hold down the key then select nodes:</p>
+      <p>S: Start</p>
+      <p>E: End</p>
+      <p>W: Wall</p>
+    </div>
+  </div>
+  <main id="Grid" class="grid"></main>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>

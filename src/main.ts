@@ -65,10 +65,15 @@ startBtn?.addEventListener('click', function(e) {
   e.preventDefault();
 
   if (algoSelect?.value != '') {
-    if (G.start && G.end) {
-      let path = breadthFirst(G.start, G.end, G.grid);
-      G.walkBackPathMarking(path)
-    }
+    let path = new Promise<number[][]>((resolve, reject) => {
+      if (G.start && G.end) {
+        resolve(breadthFirst(G.start, G.end, G))
+      }
+      reject("This was rejected?")
+    });
+    path.then(data => {
+      G.walkBackPathMarking(data)
+    })
   }
   else {
     alert("You didn't select a search type thing");

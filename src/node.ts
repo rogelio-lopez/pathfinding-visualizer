@@ -25,19 +25,14 @@ export default class Node {
     let div = document.createElement("div");
     div.setAttribute('coordinate', `${this.row}-${this.col}`);
     div.classList.add("node");
-
-    if (this.classes.length > 1) {
-      div.classList.add(...this.classes);
-    }
-
     this.type ? div.classList.add(`${this.type}`) : '';
 
-    return div;
-  }
+    if (this.classes.length > 0) {
+      this.classes.forEach(c => {
+        div.classList.add(c);
+      });
+    }
 
-  getClasses(): string {
-    let str: string = "";
-    this.classes.forEach(c => str += ` ${c}`);
-    return str;
+    return div;
   }
 }

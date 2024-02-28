@@ -1,10 +1,11 @@
 //Breadth First Search
-import Node from '../node.ts';
+//import Node from '../node.ts';
+import { Grid } from '../grid.ts';
 import { Func } from '../functions.ts';
 
-export default function breadthFirst(start: number[], end: number[], g: Node[][]): number[][] {
+export default async function breadthFirst(start: number[], end: number[], G: Grid): Promise<number[][]> {
 
-  let grid = g;
+  let grid = G.grid;
   let queue: number[][] = [start];
   let endFound: boolean = false;
 
@@ -13,6 +14,8 @@ export default function breadthFirst(start: number[], end: number[], g: Node[][]
     let [row, col] = [queue[0][0], queue[0][1]];
 
     grid[row][col].classes.push('checked')
+
+    await G.displayGrid(35);
 
     // Loop through neighbors for grid[y][x]
     for (let i = 0; i < grid[row][col].neighbors.length; i++) {
@@ -33,8 +36,10 @@ export default function breadthFirst(start: number[], end: number[], g: Node[][]
         nNode.wasChecked = true;
         nNode.parent = grid[row][col];
         nNode.classes.push('queued');
+        await G.displayGrid(1);
       }
     }
+
 
     // remove first item in queue
     queue = queue.slice(1);

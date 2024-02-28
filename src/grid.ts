@@ -33,7 +33,10 @@ export class Grid {
   }
 
   /* Display current grid array as html */
-  displayGrid() {
+  async displayGrid(time?: number) {
+    if (time) {
+      await delay(time);
+    }
     if (this.htmlEl) {
       let width = (Math.floor(window.innerWidth / 20)) * 20;
       this.htmlEl.innerHTML = '';
@@ -55,8 +58,7 @@ export class Grid {
       if (this.grid[row][col].type !== 'start' && this.grid[row][col].type !== 'end') {
         this.grid[row][col].type = 'path';
       }
-      await delay(50);
-      this.displayGrid();
+      await this.displayGrid(35);
     }
   }
 
