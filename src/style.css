@@ -88,12 +88,12 @@
 .node.start{
   background-position: center;
   background-size: cover;
-  background-image: url('/pathfinding-visualizer/public/start.svg');
+  background-image: url('/start.svg');
 }
 .node.end{
   background-position: center;
   background-size: cover;
-  background-image: url('/pathfinding-visualizer/public/end.svg');
+  background-image: url('/end.svg');
 }
 .node.path{
   background: #fea410 !important;
