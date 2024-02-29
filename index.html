@@ -10,8 +10,22 @@
 </head>
 
 <body id="app">
-  <div class="info-box">
-    <div class="top">
+  <div class="header-box">
+    <div class="left">
+      <h1>Pathfinding Visualizer</h1>
+      <div class="left-bot">
+        <div class="node-selection">
+          <p><strong>S</strong><span>Start</span></p>
+          <p><strong>E</strong><span>End</span></p>
+          <p><strong>W</strong><span>Wall</span></p>
+        </div>
+        <div class="theme-toggle">
+          <button><span></span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
       <select name="AlgoSelect" id="AlgoSelect">
         <option disabled selected value> -- Search Algorithms -- </option>
         <option value="BFS">BFS</option>
@@ -19,13 +33,6 @@
 
       <button id="StartFinder">Start</button>
       <button id="ClearFinder">Clear</button>
-    </div>
-
-    <div class="instructions">
-      <p>Hold down the key then select nodes:</p>
-      <p>S: Start</p>
-      <p>E: End</p>
-      <p>W: Wall</p>
     </div>
   </div>
   <main id="Grid" class="grid"></main>

@@ -3,9 +3,7 @@ Path finding algorithm visualizer with Vite and Typescript
 
 
 TODO: 
-* searching animation for algo
-    -add a slow display grid/delayed rendering
-    - Will Probably need to use Promises for returns.. so lots to rewrite :') 
+* Fix styles
 * finish Depth First Search
 
 FIX LATER:

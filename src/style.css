@@ -1,5 +1,7 @@
 *{
   --bg-clr: #eeeeeecf;
+  color: black;
+  font-family: monospace;
 }
 #app{
   display: flex;
@@ -9,45 +11,58 @@
   width: 100vw;
   margin: 0;
 }
-.info-box {
+
+/* Header Box */
+.header-box{
   height: 120px;
   width: calc(100% - 20px);
   padding: 10px;
   background: white;
   color: white;
-}
-.info-box .top{
   display: flex;
-  justify-content: space-between;
-  max-width: 400px;
 }
-.info-box .top select,
-.info-box .top button{
-  outline: none;
-  padding: 5px 10px;
+.header-box .left,
+.header-box .right{
+  width: 50%;
+  height: 100%;
+}
+.header-box .left-bot,
+.header-box .left-bot .node-selection{
+  display: flex;
+}
+.header-box .left-bot .node-selection{
+  width: 50%;
+  border: solid 1px lightgrey;
   border-radius: 5px;
-  cursor: pointer;
+  position: relative;
 }
-.info-box .top button:first-of-type{
-  color: white;
-  border: 2px solid green;
-  background: #015701;
+.header-box .left-bot .node-selection::before{
+  content: '';
+  width: 33.33%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #77889978;
 }
-.info-box .top button:last-of-type{
-  color: white;
-  border: 2px solid red;
-  background: #b80000;
-}
-.info-box .top select{
-  border: 2px solid #dad8d8;
-}
-.info-box .instructions{
-  color: black;
+.header-box .left-bot .node-selection p{
   display: flex;
-  justify-content: space-between;
-  max-width: 500px;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px 5px;
+  margin: 0;
+  width: 33.33%;
+  z-index: 1;
 }
 
+.header-box .left-bot .theme-toggle{
+  margin-left: 10px;
+  position: relative;
+}
+.header-box .left-bot .theme-toggle button{
+  height: 30px;
+  width: 60px;
+}
 
 /* Grid */
 .grid{
@@ -88,12 +103,12 @@
 .node.start{
   background-position: center;
   background-size: cover;
-  background-image: url('/start.svg');
+  background-image: url('/pathfinding-visualizer/start.svg');
 }
 .node.end{
   background-position: center;
   background-size: cover;
-  background-image: url('/end.svg');
+  background-image: url('/pathfinding-visualizer/end.svg');
 }
 .node.path{
   background: #fea410 !important;
