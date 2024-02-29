@@ -2,23 +2,38 @@ import { Grid } from './grid.ts';
 import { Func } from './functions.ts';
 import breadthFirst from './algos/breadthFirst.ts';
 
+let body = document.querySelector('#app') as HTMLElement;
 let algoSelect = document.querySelector('#AlgoSelect') as HTMLInputElement;
 let startBtn = document.querySelector('#StartFinder');
 let clearBtn = document.querySelector('#ClearFinder');
+let nodeSelection = document.querySelector('.current-node-select') as HTMLElement;
+let toggleTheme = document.querySelector('#ThemeToggle') as HTMLInputElement;
 
 /* --- Initialize Grid class --- */
 let G = new Grid(document.getElementById('Grid'));
 G.displayGrid();
 
+/* Theme Toggle */
+toggleTheme?.addEventListener('change', function() {
+  if (toggleTheme.checked) {
+    body.classList.add('dk');
+  }
+  else {
+    body.classList.remove('dk');
+  }
+});
 
 /* --- Node Selection --- */
 /* Start & End: Handle node selections on click */
-let keyCode: string | null = null;
-window.onkeydown = function(e) {
-  keyCode = e.key;
-}
-window.onkeyup = function() {
-  keyCode = null;
+let keyCode: string = 's';
+window.onkeyup = function(e) {
+  if (e.key == 's' || e.key == 'e' || e.key == 'w') {
+    keyCode = e.key;
+  }
+
+  if (nodeSelection) {
+    Func.changeNodeSelection(keyCode, nodeSelection);
+  }
 }
 
 G.htmlEl?.addEventListener('click', function(e) {
@@ -32,6 +47,11 @@ G.htmlEl?.addEventListener('click', function(e) {
   else if (keyCode == 'e') {
     G.selectEndNode(row, col);
     G.displayGrid();
+  }
+  else if (keyCode == 'w') {
+    G.selectWallNode(row, col);
+    G.displayGrid();
+    lastCoordinate = [row, col];
   }
 });
 

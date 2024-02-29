@@ -7,27 +7,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vite + TS</title>
   
-  <script type="module" crossorigin src="/pathfinding-visualizer/assets/index-5f537671.js"></script>
-  <link rel="stylesheet" href="/pathfinding-visualizer/assets/index-f56dffeb.css">
+  <script type="module" crossorigin src="/pathfinding-visualizer/assets/index-e0768525.js"></script>
+  <link rel="stylesheet" href="/pathfinding-visualizer/assets/index-fc1dfde8.css">
 </head>
 
 <body id="app">
-  <div class="info-box">
-    <div class="top">
-      <select name="AlgoSelect" id="AlgoSelect">
-        <option disabled selected value> -- Search Algorithms -- </option>
-        <option value="BFS">BFS</option>
-      </select>
-
-      <button id="StartFinder">Start</button>
-      <button id="ClearFinder">Clear</button>
+  <div class="header-box">
+    <div class="left">
+      <h1>Pathfinding<br>Visualizer</h1>
     </div>
 
-    <div class="instructions">
-      <p>Hold down the key then select nodes:</p>
-      <p>S: Start</p>
-      <p>E: End</p>
-      <p>W: Wall</p>
+    <div class="right">
+      <div class="right-top">
+        <select name="AlgoSelect" id="AlgoSelect">
+          <option disabled selected value> -- Search Algorithms -- </option>
+          <option value="BFS">BFS</option>
+        </select>
+
+        <button id="StartFinder">Start</button>
+        <button id="ClearFinder">Clear</button>
+      </div>
+      <div class="right-bot">
+        <div class="node-selection">
+          <div class="current-node-select"></div>
+          <p><strong>S</strong><span>Start</span></p>
+          <p><strong>E</strong><span>End</span></p>
+          <p><strong>W</strong><span>Wall</span></p>
+        </div>
+        <label class="theme-toggle">
+          <input id="ThemeToggle" type="checkbox">
+          <span></span>
+        </label>
+      </div>
     </div>
   </div>
   <main id="Grid" class="grid"></main>

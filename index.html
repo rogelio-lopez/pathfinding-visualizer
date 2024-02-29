@@ -12,27 +12,31 @@
 <body id="app">
   <div class="header-box">
     <div class="left">
-      <h1>Pathfinding Visualizer</h1>
-      <div class="left-bot">
+      <h1>Pathfinding<br>Visualizer</h1>
+    </div>
+
+    <div class="right">
+      <div class="right-top">
+        <select name="AlgoSelect" id="AlgoSelect">
+          <option disabled selected value> -- Search Algorithms -- </option>
+          <option value="BFS">BFS</option>
+        </select>
+
+        <button id="StartFinder">Start</button>
+        <button id="ClearFinder">Clear</button>
+      </div>
+      <div class="right-bot">
         <div class="node-selection">
+          <div class="current-node-select"></div>
           <p><strong>S</strong><span>Start</span></p>
           <p><strong>E</strong><span>End</span></p>
           <p><strong>W</strong><span>Wall</span></p>
         </div>
-        <div class="theme-toggle">
-          <button><span></span></button>
-        </div>
+        <label class="theme-toggle">
+          <input id="ThemeToggle" type="checkbox">
+          <span></span>
+        </label>
       </div>
-    </div>
-
-    <div class="right">
-      <select name="AlgoSelect" id="AlgoSelect">
-        <option disabled selected value> -- Search Algorithms -- </option>
-        <option value="BFS">BFS</option>
-      </select>
-
-      <button id="StartFinder">Start</button>
-      <button id="ClearFinder">Clear</button>
     </div>
   </div>
   <main id="Grid" class="grid"></main>

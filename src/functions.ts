@@ -40,4 +40,15 @@ export class Func {
     }
   }
 
+  static changeNodeSelection(keycode: string, el: HTMLElement) {
+    if (keycode == 's') {
+      el.style.left = "0";
+    }
+    else if (keycode == 'e') {
+      el.style.left = "33.33%";
+    }
+    else if (keycode == 'w') {
+      el.style.left = "66.66%";
+    }
+  }
 }

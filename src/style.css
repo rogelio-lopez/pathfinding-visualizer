@@ -1,8 +1,18 @@
 *{
-  --bg-clr: #eeeeeecf;
-  color: black;
+  --bg-clr: #fff;
+  --fnt-clr: #000;
+  --lt-clr: #77889978;
+  
+  color: var(--fnt-clr);
   font-family: monospace;
 }
+
+.dk *{
+  --bg-clr: #000;
+  --fnt-clr: #fff;
+  --lt-clr: #77889978;
+}
+
 #app{
   display: flex;
   flex-direction: column;
@@ -11,41 +21,71 @@
   width: 100vw;
   margin: 0;
 }
+#app.dk{
+  background: var(--fnt-clr);;
+}
 
 /* Header Box */
 .header-box{
   height: 120px;
   width: calc(100% - 20px);
   padding: 10px;
-  background: white;
-  color: white;
+  color: var(--bg-clr);
   display: flex;
+  justify-content: space-between;
 }
-.header-box .left,
-.header-box .right{
-  width: 50%;
+.header-box .left{
+  width: 30%;
   height: 100%;
+  display: flex;
+  justify-content: center;
 }
-.header-box .left-bot,
-.header-box .left-bot .node-selection{
+.header-box .left h1{
+  line-height: 1.5;
+}
+.header-box .right{
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.header-box .right select{
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  color: var(--fnt-clr);
+  background: var(--lt-clr);
+}
+.header-box .right button{
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #000;
+  border: solid 1px var(--lt-clr);
+}
+.header-box .right-bot,
+.header-box .right-bot .node-selection{
   display: flex;
 }
-.header-box .left-bot .node-selection{
+.header-box .right-bot .node-selection{
   width: 50%;
-  border: solid 1px lightgrey;
+  border: solid 1px var(--lt-clr);
   border-radius: 5px;
   position: relative;
+  overflow: hidden;
+  min-width: 200px;
+  max-width: 250px;
 }
-.header-box .left-bot .node-selection::before{
-  content: '';
+.header-box .right-bot .node-selection .current-node-select{
   width: 33.33%;
   height: 100%;
   position: absolute;
   left: 0;
   bottom: 0;
-  background: #77889978;
+  background: var(--lt-clr);
+  transition: .25s ease;
 }
-.header-box .left-bot .node-selection p{
+.header-box .right-bot .node-selection p{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,13 +95,49 @@
   z-index: 1;
 }
 
-.header-box .left-bot .theme-toggle{
-  margin-left: 10px;
+.header-box .right-bot .theme-toggle{
+  margin-left: 20px;
   position: relative;
-}
-.header-box .left-bot .theme-toggle button{
   height: 30px;
   width: 60px;
+  border-radius: 45px;
+  background: var(--lt-clr);
+  cursor: pointer;
+  transform: translateY(5px);
+}
+.header-box .right-bot .theme-toggle input[type="checkbox"]{
+  height: 100%;
+  width: 100%;
+  visibility: none;
+  display: none;
+}
+.header-box .right-bot .theme-toggle input[type="checkbox"] + span{
+  height: 24px;
+  width: 24px;
+  background: #fff;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  border-radius: 99%;
+  transition: left .25s ease;
+}
+.header-box .right-bot .theme-toggle input[type="checkbox"]:checked + span{
+  right: 3px;
+  left: auto;
+}
+.header-box .right-bot .theme-toggle input[type="checkbox"] + span::after{
+  content: '';
+  height: 80%;
+  width: 80%;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  background-position: center;
+  background-size: cover;
+  background-image: url('/pathfinding-visualizer/sun.svg');
+}
+.header-box .right-bot .theme-toggle input[type="checkbox"]:checked + span::after{
+  background-image: url('/pathfinding-visualizer/moon.svg');
 }
 
 /* Grid */
@@ -69,8 +145,8 @@
   display: flex;
   flex-wrap: wrap;
   margin: auto;
-  border-top: solid 1px lightgrey;
-  border-left: solid 1px lightgrey;
+  border-top: solid 1px var(--lt-clr);
+  border-left: solid 1px var(--lt-clr);
 }
 
 /* Nodes */
@@ -78,9 +154,9 @@
   position: relative;
   height: 19px;
   width: 19px;
-  border-right: solid lightgrey 1px;
-  border-bottom: solid lightgrey 1px;
-  background: white;
+  border-right: solid var(--lt-clr) 1px;
+  border-bottom: solid var(--lt-clr) 1px;
+  background: var(--bg-clr);
 }
 .node::after{
   content: '';
@@ -96,7 +172,7 @@
   z-index: 2;
   top: -1px;
   left: -1px;
-  border-color: lightgrey;
+  border-color: var(--lt-clr);
   background: inherit;
   scale: 1.2;
 }
