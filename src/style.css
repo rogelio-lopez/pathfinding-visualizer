@@ -181,16 +181,25 @@
   background-size: cover;
   background-image: url('/pathfinding-visualizer/start.svg');
 }
+.dk .node.start{
+  background-image: url('/pathfinding-visualizer/start-dk.svg');
+}
 .node.end{
   background-position: center;
   background-size: cover;
   background-image: url('/pathfinding-visualizer/end.svg');
+}
+.dk .node.end{
+  background-image: url('/pathfinding-visualizer/end-dk.svg');
 }
 .node.path{
   background: #fea410 !important;
 }
 .node.wall{
   background: #0c3547;
+}
+.dk .node.wall{
+  background: #cad5da;
 }
 .node:not(.start).checked.queued {
   background: green;
