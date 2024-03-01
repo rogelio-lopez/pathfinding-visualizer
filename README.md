@@ -2,7 +2,7 @@
 # Pathfinding Algorithm Visualizer
 This project is a web-based visualizer for pathfinding algorithms, built using TypeScript and compiled with Vite. It allows users to visualize how different pathfinding algorithms navigate through a grid, providing a clear understanding of their workings.
 
-![alt text](https://github.com/rogelio-lopez/pathfinding-visualizer/public/recording.gif?raw=true)
+![alt text](/public/recording.gif?raw=true)
 
 ## Getting Started
 These instructions will help you get a copy of the project up and running on your local machine for development and testing purposes.
