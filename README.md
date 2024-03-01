@@ -28,5 +28,5 @@ npm run dev
 - Experiment with different algorithms and grid configurations to see how they perform.
 
 ## Future Enhancements
-- Add more pathfinding algorithms.
-- Enhance the user interface for a better user experience.
+- Add weights so I can add more pathfinding algorithms (Dijkstra’s, A*).
+- Add maze generation.
