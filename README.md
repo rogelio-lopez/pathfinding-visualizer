@@ -1,12 +1,32 @@
-# Path-Finder
-Path finding algorithm visualizer with Vite and Typescript 
 
+# Pathfinding Algorithm Visualizer
+This project is a web-based visualizer for pathfinding algorithms, built using TypeScript and compiled with Vite. It allows users to visualize how different pathfinding algorithms navigate through a grid, providing a clear understanding of their workings.
 
-TODO: 
-* update single node
-* finish Depth First Search
+![alt text](https://github.com/rogelio-lopez/pathfinding-visualizer/public/recording.gif?raw=true)
 
-FIX LATER:
-* Cant do onClick for wall nodes because of drawing
+## Getting Started
+These instructions will help you get a copy of the project up and running on your local machine for development and testing purposes.
 
-other algos: Dijkstra, A*
+### Installation
+Clone the repository to your local machine using git and install the project dependencies to start the development server.
+```
+git clone https://github.com/rogelio-lopez/pathfinding-visualizer.git
+```
+```
+cd pathfinding-visualizer
+```
+```
+npm install
+```
+```
+npm run dev
+```
+
+## Usage
+- Use the visualizer interface to set up your grid, choose an algorithm, and start the visualization.
+- Observe how the algorithm navigates through the grid to find a path from a start point to an end point.
+- Experiment with different algorithms and grid configurations to see how they perform.
+
+##Future Enhancements
+- Add more pathfinding algorithms.
+- Enhance the user interface for a better user experience.
