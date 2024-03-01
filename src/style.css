@@ -192,18 +192,48 @@
 .dk .node.end{
   background-image: url('/pathfinding-visualizer/end-dk.svg');
 }
-.node.path{
-  background: #fea410 !important;
-}
 .node.wall{
   background: #0c3547;
 }
 .dk .node.wall{
   background: #cad5da;
 }
-.node:not(.start).checked.queued {
+.node:not(.start).checked::before{
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 20%;
+  width: 20%;
   background: green;
+  translate: -50% -50%;
+  border-radius: 50%;
+  animation: checkedNode .45s ease forwards;
 }
-.node:not(.start).queued {
-  background: blue;
+.node.path::before{
+  background: #fea410 !important;
+}
+
+@keyframes checkedNode{
+  0%{
+    height: 20%;
+    width: 20%;
+    background: green;
+  }
+  33%{
+    height: 46%;
+    width: 46%;
+    background: orange;
+  }
+  66%{
+    height: 72%;
+    width: 72%;
+    background: blue;
+  }
+  100%{
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+    background: lightblue;
+  }
 }

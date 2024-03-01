@@ -3,7 +3,7 @@ Path finding algorithm visualizer with Vite and Typescript
 
 
 TODO: 
-* Fix styles
+* update single node
 * finish Depth First Search
 
 FIX LATER:

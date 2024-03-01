@@ -32,7 +32,7 @@ export class Grid {
     return grid;
   }
 
-  /* Display current grid array as html */
+  /* Display current Grid & Nodes array as html */
   async displayGrid(time?: number) {
     if (time) {
       await delay(time);
@@ -50,6 +50,11 @@ export class Grid {
     }
   }
 
+  async updateNodeState(time: number, row: number, col: number) {
+    this.grid[row][col].refreshNode();
+    await delay(time);
+  }
+
   /* Marks path from walkBackCoordinates() as isPath = true (visual mainly) */
   async walkBackPathMarking(path: number[][]) {
     let [row, col]: number[] = [];
@@ -57,8 +62,8 @@ export class Grid {
       [row, col] = [nds[0], nds[1]];
       if (this.grid[row][col].type !== 'start' && this.grid[row][col].type !== 'end') {
         this.grid[row][col].type = 'path';
+        await this.updateNodeState(35, row, col);
       }
-      await this.displayGrid(35);
     }
   }
 

@@ -32,7 +32,17 @@ export default class Node {
         div.classList.add(c);
       });
     }
-
     return div;
+  }
+
+  refreshNode() {
+    let el = document.querySelector(`[coordinate='${this.row}-${this.col}']`);
+    this.type ? el?.classList.add(`${this.type}`) : '';
+
+    if (this.classes.length > 0) {
+      this.classes.forEach(c => {
+        el?.classList.add(c);
+      });
+    }
   }
 }
