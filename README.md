@@ -27,6 +27,6 @@ npm run dev
 - Observe how the algorithm navigates through the grid to find a path from a start point to an end point.
 - Experiment with different algorithms and grid configurations to see how they perform.
 
-##Future Enhancements
+## Future Enhancements
 - Add more pathfinding algorithms.
 - Enhance the user interface for a better user experience.
